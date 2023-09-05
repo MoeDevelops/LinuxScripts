@@ -1,5 +1,29 @@
-#!/bin/bash/
-sudo apt install -y kde-plasma-desktop flatpak plasma-discover-backend-flatpak spectacle yakuake
-sudo apt remove -y zutty kwalletmanagersudo
-sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+#!/bin/bash
+
+# Check if the script is running with root privileges
+if [ "$EUID" -ne 0 ]; then
+  echo "Please run this script as root or using sudo."
+  exit 1
+fi
+
+# Install necessary packages using apt
+apt update
+apt install -y kde-plasma-desktop spectacle yakuake
+
+# Remove unwanted packages using apt
+apt remove -y zutty kwalletmanager
+
+# Install Flatpak
+apt install -y flatpak
+
+# Add Flathub repository
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+# Install Flatpak packages
 flatpak install flathub -y kdenlive okular gwenview kcalc elisa kamoso brave
+
+# Cleanup
+apt autoremove -y
+apt clean
+
+echo "Script completed successfully. Please reboot now."
