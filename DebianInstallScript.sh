@@ -21,7 +21,7 @@ apt install -y flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Install Flatpak packages
-flatpak install flathub -y kdenlive okular gwenview kcalc elisa kamoso brave
+flatpak install flathub -y okular gwenview kcalc elisa kamoso brave
 
 # Cleanup
 apt autoremove -y
