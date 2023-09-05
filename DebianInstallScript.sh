@@ -8,7 +8,8 @@ fi
 
 # Install necessary packages using apt
 apt update
-apt install -y kde-plasma-desktop spectacle yakuake
+apt install -y kde-plasma-desktop
+apt install spectacle yakuake
 
 # Remove unwanted packages using apt
 apt remove -y zutty kwalletmanager
