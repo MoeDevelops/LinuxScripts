@@ -1,26 +1,23 @@
 #!/bin/bash
 
-# Check if the script is running with root privileges
+# Check if the script is running with root
 if [ "$EUID" -ne 0 ]; then
   echo "Please run this script as root or using sudo."
   exit 1
 fi
 
-# Install necessary packages using apt
+# Install apt packages
 apt update
 apt install -y kde-plasma-desktop
-apt install -y spectacle yakuake plasma-discover-backend-flatpak
+apt install -y neofetch flatpak spectacle yakuake plasma-discover-backend-flatpak
 
-# Remove unwanted packages using apt
+# Remove apt packages
 apt remove -y zutty kwalletmanager konqueror
 
-# Install Flatpak
-apt install -y flatpak
-
-# Add Flathub repository
+# Add flathub repository
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-# Install Flatpak packages
+# Install flatpak packages
 flatpak install flathub -y okular gwenview kcalc elisa kamoso brave
 
 # Cleanup
