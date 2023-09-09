@@ -18,7 +18,7 @@ apt remove -y zutty kwalletmanager konqueror
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Install flatpak packages
-flatpak install flathub -y okular gwenview kcalc elisa kamoso brave
+flatpak install flathub -y okular gwenview kcalc elisa kamoso brave discord
 
 # Cleanup
 apt autoremove -y
