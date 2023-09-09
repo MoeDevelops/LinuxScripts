@@ -9,7 +9,7 @@ fi
 # Install apt packages
 apt update
 apt install -y kde-plasma-desktop
-apt install -y neofetch flatpak spectacle yakuake plasma-discover-backend-flatpak
+apt install -y neofetch flatpak plasma-discover-backend-flatpak
 
 # Remove apt packages
 apt remove -y zutty kwalletmanager konqueror
@@ -18,7 +18,7 @@ apt remove -y zutty kwalletmanager konqueror
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Install flatpak packages
-flatpak install flathub -y okular gwenview kcalc elisa kamoso brave discord
+flatpak install flathub -y okular gwenview kcalc elisa kamoso brave discord spectacle yakuake 
 
 # Cleanup
 apt autoremove -y
