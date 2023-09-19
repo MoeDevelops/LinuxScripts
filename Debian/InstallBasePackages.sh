@@ -18,7 +18,10 @@ apt remove -y zutty kwalletmanager konqueror
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Install flatpak packages
-flatpak install flathub -y okular gwenview kcalc elisa kamoso brave com.discordapp.Discord yakuake 
+echo "Installing KDE flatpaks"
+flatpak install flathub -y org.kde.okular org.kde.gwenview org.kde.kcalc org.kde.elisa org.kde.kamoso org.kde.yakuake
+echo "Installing misc. flatpaks"
+flatpak install flathub -y com.brave.Browser com.discordapp.Discord org.libreoffice.LibreOffice org.gimp.GIMP com.usebottles.bottles com.github.tchx84.Flatseal io.gitlab.librewolf-community io.mpv.Mpv
 
 # Cleanup
 apt autoremove -y
