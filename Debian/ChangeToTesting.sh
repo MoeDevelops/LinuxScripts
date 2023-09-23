@@ -10,6 +10,7 @@ fi
 cp /etc/apt/sources.list /etc/apt/sources.list.backup
 
 # Replace debian version with testing
+sed -i 's/trixie/testing/g' /etc/apt/sources.list
 sed -i 's/bookworm/testing/g' /etc/apt/sources.list
 sed -i 's/bullseye/testing/g' /etc/apt/sources.list
 sed -i 's/buster/testing/g' /etc/apt/sources.list
