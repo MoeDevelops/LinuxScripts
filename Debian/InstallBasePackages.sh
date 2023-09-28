@@ -12,7 +12,7 @@ apt install -y kde-plasma-desktop
 apt install -y neofetch kde-spectacle flatpak plasma-discover-backend-flatpak
 
 # Remove apt packages
-apt remove -y zutty kwalletmanager konqueror
+apt remove -y zutty konqueror
 
 # Add flathub repository
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
