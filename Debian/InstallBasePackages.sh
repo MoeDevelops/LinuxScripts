@@ -11,6 +11,13 @@ apt update
 apt install -y kde-plasma-desktop
 apt install -y neofetch kde-spectacle dragonplayer flatpak plasma-discover-backend-flatpak
 
+# Install snap
+apt install -y snapd plasma-discover-backend-snap
+
+# Hides the snap folder
+touch .hidden
+echo "snap" > .hidden
+
 # Remove apt packages
 apt remove -y zutty konqueror
 
