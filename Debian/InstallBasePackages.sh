@@ -9,7 +9,7 @@ fi
 # Install apt packages
 apt update
 apt install -y kde-plasma-desktop
-apt install -y neofetch kde-spectacle dragonplayer flatpak plasma-discover-backend-flatpak
+apt install -y neofetch kde-spectacle ark dragonplayer flatpak plasma-discover-backend-flatpak
 
 # Install snap
 apt install -y snapd plasma-discover-backend-snap
