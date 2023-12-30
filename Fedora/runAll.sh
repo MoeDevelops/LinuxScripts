@@ -7,12 +7,12 @@ cd ~/linux-scripts/Fedora
 
 ./installPackages.sh
 
-./add/firacode
+./add/firacode.sh
 
-./add/mullvad
+./add/mullvad.sh
 
-./add/snap
+./add/snap.sh
 
-./add/vscode
+./add/vscode.sh
 
-./add/zsh
+./add/zsh.sh

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install system packages
-sudo dnf install neofetch
+sudo dnf install -y neofetch
 
 # Add flathub repository
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
