@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Go to home directory
-cd ~/LinuxScripts/Fedora
+cd ~/linux-scripts/Fedora
 
 ./removePackages.sh
 
