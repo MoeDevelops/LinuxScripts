@@ -3,7 +3,7 @@
 # Go to home directory
 cd ~/linux-scripts/Fedora
 
-./removePackages.sh
+./uninstallPackages.sh
 
 ./installPackages.sh
 
