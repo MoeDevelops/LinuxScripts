@@ -6,6 +6,7 @@ cd ~/linux-scripts/Fedora
 ./uninstallPackages.sh
 ./installPackages.sh
 
+./add/codecs.sh
 ./add/devtools.sh
 ./add/firacode.sh
 ./add/games.sh
