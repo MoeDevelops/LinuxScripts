@@ -10,6 +10,7 @@ cd ~/linux-scripts/Fedora
 ./add/devtools.sh
 ./add/firacode.sh
 ./add/games.sh
+./add/librewolf.sh
 ./add/mullvad.sh
 ./add/multimedia
 ./add/snap.sh
