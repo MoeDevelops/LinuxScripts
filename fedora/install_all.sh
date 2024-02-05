@@ -4,7 +4,7 @@
 
 # Librewolf
 sudo dnf -y config-manager --add-repo https://rpm.librewolf.net/librewolf-repo.repo
-dnf check-update
+dnf -y check-update
 
 # RPM Fusion
 sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
