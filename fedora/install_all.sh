@@ -24,6 +24,9 @@ echo "snap" > ~/.hidden
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo flatpak remote-delete fedora
 
+# Nix
+sh <(curl -L https://nixos.org/nix/install) --no-daemon
+
 # - Remove packages -
 sudo dnf remove -y akregator kio-gdrive firefox kmahjongg kmines kmouth kontact konversation kpat libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer
 
@@ -32,10 +35,10 @@ sudo dnf autoremove -y
 # - Install packages -
 
 # dnf
-sudo dnf install -y --allowerasing librewolf libreoffice neofetch yakuake kate code godot mullvad-vpn zsh snapd ffmpeg gimp steam-devices
+sudo dnf install -y --allowerasing librewolf kdenlive libreoffice neofetch yakuake kate code godot mullvad-vpn zsh snapd ffmpeg gimp steam-devices
 
 # Flatpak
-flatpak install flathub -y com.github.tchx84.Flatseal com.discordapp.Discord com.usebottles.bottles io.github.shiftey.Desktop com.valvesoftware.Steam com.atlauncher.ATLauncher com.heroicgameslauncher.hgl
+flatpak install flathub -y com.github.tchx84.Flatseal com.discordapp.Discord com.usebottles.bottles io.github.shiftey.Desktop com.valvesoftware.Steam com.atlauncher.ATLauncher com.heroicgameslauncher.hgl org.tenacityaudio.Tenacity com.obsproject.Studio
 
 # Codecs
 sudo dnf groupupdate -y multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin --allowerasing
