@@ -4,8 +4,7 @@
 
 # Librewolf
 sudo dnf -y config-manager --add-repo https://rpm.librewolf.net/librewolf-repo.repo
-# Installs early, due to user having to accept a key
-sudo dnf install -y librewolf
+dnf check-update
 
 # RPM Fusion
 sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
@@ -33,8 +32,7 @@ sudo dnf autoremove -y
 # - Install packages -
 
 # dnf
-dnf check-update
-sudo dnf install -y libreoffice neofetch yakuake kate code godot mullvad-vpn zsh snapd ffmpeg gimp steam-devices
+sudo dnf install -y librewolf libreoffice neofetch yakuake kate code godot mullvad-vpn zsh snapd ffmpeg gimp steam-devices
 
 # Flatpak
 flatpak install flathub -y com.github.tchx84.Flatseal com.discordapp.Discord com.usebottles.bottles io.github.shiftey.Desktop com.valvesoftware.Steam com.atlauncher.ATLauncher com.heroicgameslauncher.hgl
