@@ -2,6 +2,9 @@
 
 # - Add repos -
 
+# Librewolf
+sudo dnf -y config-manager --add-repo https://rpm.librewolf.net/librewolf-repo.repo 
+
 # RPM Fusion
 sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
@@ -11,9 +14,6 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 
 # Mullvad
 sudo dnf -y config-manager --add-repo https://repository.mullvad.net/rpm/stable/mullvad.repo
-
-# Librewolf
-sudo dnf -y config-manager --add-repo https://rpm.librewolf.net/librewolf-repo.repo
 
 # Snap
 touch ~/.hidden
@@ -30,7 +30,7 @@ dnf check-update
 sudo dnf install -y libreoffice neofetch yakuake kate code godot librewolf mullvad-vpn zsh snapd ffmpeg gimp steam-devices
 
 # Flatpak
-flatpak install flathub com.github.tchx84.Flatseal com.discordapp.Discord com.usebottles.bottles io.github.shiftey.Desktop com.valvesoftware.Steam com.atlauncher.ATLauncher com.heroicgameslauncher.hgl
+flatpak install flathub -y com.github.tchx84.Flatseal com.discordapp.Discord com.usebottles.bottles io.github.shiftey.Desktop com.valvesoftware.Steam com.atlauncher.ATLauncher com.heroicgameslauncher.hgl
 
 # Codecs
 sudo dnf groupupdate -y multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin --allowerasing
