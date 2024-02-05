@@ -3,7 +3,9 @@
 # - Add repos -
 
 # Librewolf
-sudo dnf -y config-manager --add-repo https://rpm.librewolf.net/librewolf-repo.repo 
+sudo dnf -y config-manager --add-repo https://rpm.librewolf.net/librewolf-repo.repo
+# Installs early, due to user having to accept a key
+sudo dnf install -y librewolf
 
 # RPM Fusion
 sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
@@ -23,11 +25,16 @@ echo "snap" > ~/.hidden
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo flatpak remote-delete fedora
 
+# - Remove packages -
+sudo dnf remove -y akregator kio-gdrive firefox kmahjongg kmines kmouth kontact konversation kpat libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer
+
+sudo dnf autoremove -y
+
 # - Install packages -
 
 # dnf
 dnf check-update
-sudo dnf install -y libreoffice neofetch yakuake kate code godot librewolf mullvad-vpn zsh snapd ffmpeg gimp steam-devices
+sudo dnf install -y libreoffice neofetch yakuake kate code godot mullvad-vpn zsh snapd ffmpeg gimp steam-devices
 
 # Flatpak
 flatpak install flathub -y com.github.tchx84.Flatseal com.discordapp.Discord com.usebottles.bottles io.github.shiftey.Desktop com.valvesoftware.Steam com.atlauncher.ATLauncher com.heroicgameslauncher.hgl
@@ -42,10 +49,5 @@ sudo dnf groupupdate -y sound-and-video
 wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
 unzip FiraCode.zip -d firacode
 sudo mv firacode /usr/share/fonts/truetype/
-
-# - Remove packages -
-sudo dnf remove -y akregator kio-gdrive firefox kmahjongg kmines kmouth kontact konversation kpat libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer
-
-sudo dnf autoremove -y
 
 sudo dnf update -y
