@@ -32,7 +32,7 @@ sudo dnf autoremove -y
 # - Install packages -
 
 # dnf
-sudo dnf install -y librewolf libreoffice neofetch yakuake kate code godot mullvad-vpn zsh snapd ffmpeg gimp steam-devices
+sudo dnf install -y --allowerasing librewolf libreoffice neofetch yakuake kate code godot mullvad-vpn zsh snapd ffmpeg gimp steam-devices
 
 # Flatpak
 flatpak install flathub -y com.github.tchx84.Flatseal com.discordapp.Discord com.usebottles.bottles io.github.shiftey.Desktop com.valvesoftware.Steam com.atlauncher.ATLauncher com.heroicgameslauncher.hgl
