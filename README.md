@@ -6,5 +6,5 @@
 [Git install instructions](https://git-scm.com/download/linux)
 
 ### Clode repository and run scripts
-    git clone https://github.com/MoeDevelops/Linux-scripts
+    git clone https://github.com/MoeDevelops/linux-scripts
     ./path/to/script.sh
