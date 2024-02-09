@@ -24,9 +24,6 @@ echo "snap" > ~/.hidden
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo flatpak remote-delete fedora
 
-# Nix
-sh <(curl -L https://nixos.org/nix/install) --no-daemon
-
 # - Remove packages -
 sudo dnf remove -y akregator kio-gdrive firefox kmahjongg kmines kmouth kontact konversation kpat libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer
 
