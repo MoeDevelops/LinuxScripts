@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# - Git -
+
+sudo dnf install -y git
+
+# - Brew -
+
+./brew.sh
+
 # - Add repos -
 
 # Librewolf
@@ -25,27 +33,27 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 sudo flatpak remote-delete fedora
 
 # - Remove packages -
-sudo dnf remove -y akregator kio-gdrive firefox kmahjongg kmines kmouth kontact konversation kpat libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer
+
+sudo dnf remove -y akregator blender firefox im-chooser kaddressbook kmahjongg kmines kmousetool kmouth kontact konversation korganizer kmail kpat libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer neochat skanpage
 
 sudo dnf autoremove -y
 
 # - Install packages -
 
+# FiraCode Font
+wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
+unzip FiraCode.zip -d firacode
+sudo mv firacode /usr/share/fonts/truetype/
+rm FiraCode.zip
+
 # dnf
 sudo dnf install -y --allowerasing librewolf kdenlive libreoffice neofetch yakuake kate code godot mullvad-vpn zsh snapd ffmpeg gimp steam-devices
-
-# Flatpak
-flatpak install flathub -y com.github.tchx84.Flatseal com.discordapp.Discord com.usebottles.bottles io.github.shiftey.Desktop com.valvesoftware.Steam com.atlauncher.ATLauncher com.heroicgameslauncher.hgl org.tenacityaudio.Tenacity com.obsproject.Studio
 
 # Codecs
 sudo dnf groupupdate -y multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin --allowerasing
 sudo dnf groupupdate -y sound-and-video
 
-# - Install fonts -
-
-# Fira Code
-wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
-unzip FiraCode.zip -d firacode
-sudo mv firacode /usr/share/fonts/truetype/
-
 sudo dnf update -y
+
+# Flatpak
+flatpak install flathub -y com.github.tchx84.Flatseal com.usebottles.bottles io.github.shiftey.Desktop com.valvesoftware.Steam com.atlauncher.ATLauncher com.obsproject.Studio
