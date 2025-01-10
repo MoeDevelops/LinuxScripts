@@ -14,7 +14,7 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 
 # Mullvad
-sudo dnf -y config-manager --add-repo https://repository.mullvad.net/rpm/stable/mullvad.repo
+sudo dnf config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/stable/mullvad.repo
 
 # Flathub
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -22,7 +22,7 @@ sudo flatpak remote-delete fedora
 
 # - Remove packages -
 
-sudo dnf remove -y akregator dragon elisa firefox im-chooser kaddressbook kjournald kmahjongg kmail kmines kmouth kontact konversation korganizer kpat neochat skanpage
+sudo dnf remove -y akregator dragon elisa-player firefox im-chooser kaddressbook kjournald kmahjongg kmail kmines kmouth kontact konversation korganizer kpat neochat skanpage
 
 sudo dnf autoremove -y
 
