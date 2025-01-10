@@ -4,15 +4,7 @@
 
 sudo dnf install -y git
 
-# - Brew -
-
-./brew.sh
-
 # - Add repos -
-
-# Librewolf
-sudo dnf -y config-manager --add-repo https://rpm.librewolf.net/librewolf-repo.repo
-dnf -y check-update
 
 # RPM Fusion
 sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
@@ -24,17 +16,13 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 # Mullvad
 sudo dnf -y config-manager --add-repo https://repository.mullvad.net/rpm/stable/mullvad.repo
 
-# Snap
-touch ~/.hidden
-echo "snap" > ~/.hidden
-
 # Flathub
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo flatpak remote-delete fedora
 
 # - Remove packages -
 
-sudo dnf remove -y akregator blender firefox im-chooser kaddressbook kmahjongg kmines kmousetool kmouth kontact konversation korganizer kmail kpat libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer neochat skanpage
+sudo dnf remove -y akregator dragon elisa firefox im-chooser kaddressbook kjournald kmahjongg kmail kmines kmouth kontact konversation korganizer kpat neochat skanpage
 
 sudo dnf autoremove -y
 
@@ -47,7 +35,7 @@ sudo mv firacode /usr/share/fonts/truetype/
 rm FiraCode.zip
 
 # dnf
-sudo dnf install -y --allowerasing librewolf kdenlive libreoffice neofetch yakuake kate code godot mullvad-vpn zsh snapd ffmpeg gimp steam-devices
+sudo dnf install -y --allowerasing librewolf kdenlive libreoffice neofetch yakuake kate code godot mullvad-vpn obs-studio zsh snapd ffmpeg gimp steam-devices vlc
 
 # Codecs
 sudo dnf groupupdate -y multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin --allowerasing
@@ -56,4 +44,4 @@ sudo dnf groupupdate -y sound-and-video
 sudo dnf update -y
 
 # Flatpak
-flatpak install flathub -y com.github.tchx84.Flatseal com.usebottles.bottles io.github.shiftey.Desktop com.valvesoftware.Steam com.atlauncher.ATLauncher com.obsproject.Studio
+flatpak install flathub -y com.github.tchx84.Flatseal com.usebottles.bottles io.github.shiftey.Desktop com.valvesoftware.Steam com.atlauncher.ATLauncher
