@@ -26,7 +26,7 @@ sudo flatpak remote-delete fedora-testing
 
 # - Remove packages -
 
-sudo dnf remove -y akregator dragon elisa-player firefox im-chooser kaddressbook kjournald kmahjongg kmail kmines kmouth kontact konversation korganizer kpat neochat skanpage
+sudo dnf remove -y akregator blender dragon elisa-player firefox im-chooser kaddressbook kjournald kmahjongg kmail kmines kmouth kontact konversation korganizer kpat neochat skanpage
 sudo dnf autoremove -y
 
 # - Install packages -
