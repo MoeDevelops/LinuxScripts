@@ -9,9 +9,6 @@ sudo dnf install -y git
 # RPM Fusion
 sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-# Zen-Browser
-sudo dnf -y copr enable sneexy/zen-browser
-
 # VS Code
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
@@ -39,7 +36,7 @@ rm FiraCode.zip
 rm -r firacode
 
 # dnf
-sudo dnf install -y --allowerasing zen-browser kdenlive fastfetch ffmpeg gimp kate code godot mullvad-vpn obs-studio steam-devices vlc
+sudo dnf install -y --allowerasing kdenlive fastfetch ffmpeg gimp kate code godot mullvad-vpn obs-studio steam-devices vlc
 sudo dnf autoremove -y
 
 # Codecs
@@ -49,4 +46,4 @@ sudo dnf group install -y sound-and-video
 sudo dnf update -y
 
 # Flatpak
-flatpak install flathub -y com.github.tchx84.Flatseal com.usebottles.bottles io.github.shiftey.Desktop com.valvesoftware.Steam com.atlauncher.ATLauncher
+flatpak install flathub -y io.github.zen_browser.zen com.github.tchx84.Flatseal com.usebottles.bottles io.github.shiftey.Desktop com.valvesoftware.Steam com.atlauncher.ATLauncher
